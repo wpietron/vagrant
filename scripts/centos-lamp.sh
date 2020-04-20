@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Disable firewall
+service iptables stop
+chkconfig iptables off
+
 # Update Centos with patches
 yum update -y --exclude=kernel
 
@@ -34,7 +38,7 @@ mysql -u root -e "SHOW DATABASES";
 
 # Download Starter Content
 cd /vagrant
-sudo -u vagrant wget -q https://github.com/wpietron/vagrant/blob/master/files/index.html
-sudo -u vagrant wget -q https://github.com/wpietron/vagrant/blob/master/files/info.php
+sudo -u vagrant wget -q https://raw.githubusercontent.com/wpietron/vagrant/master/files/index.html
+sudo -u vagrant wget -q https://raw.githubusercontent.com/wpietron/vagrant/master/files/info.php
 
 service httpd restart
