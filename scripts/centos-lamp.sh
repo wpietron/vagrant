@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update Centos with patches
-yum update -y --exlucde=kernel
+yum update -y --exclude=kernel
 
 # Tools
 yum install -y nano git unzip screen
